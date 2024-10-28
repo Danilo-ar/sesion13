@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sesion 13</title>
+</head>
+
+<body>
+    <script>
+        //arrays
+        const array1 = [`Elemento1`, `Elemento2`, `Elemento3`, `Elemento4`]
+        const array2 = new Array(`Mango`, `Piña`, `Manzana`, `Papaya`)
+        const numeros = []
+        console.log(`array1:` + array1)
+        console.log(`array2:`, array2)
+        //acceder / consultar un elemento
+        console.log(array1[0])
+        console.log(array1[2])
+        console.log(array1[3])
+        //modificar un elemeto
+        array1[1] = `item2`
+        console.log(`array1:` + array1)
+        array2[3] = `Sandia`
+        console.log(`array2:`, array2)
+        //agregar un elemeto al array
+        numeros[0] = 100
+        numeros[1] = 200
+        numeros[2] = 1000
+        console.log(`numeros:`, numeros)
+        // tamaño del array
+        console.log(`tamaño:`, numeros.length)
+        //recorrer un array atravez de un ciclo for
+        for (let i = 0; i < array2.length; i++) {
+            console.log(array2[i])
+        }
+        // sumatoria de elementos de un array
+        let sumatoria = 0
+        for (let i = 0; i < numeros.length; i++) {
+            sumatoria = sumatoria + numeros[i]
+        }
+        let promedio = sumatoria / numeros.length
+        console.log(`sumatoria:`, sumatoria)
+        console.log(`promedio:`, promedio)
+        //metodos que modifican un array
+        //agregarelementos al final
+        array2.push(`Guanabana`)
+        console.log(`array2:`, array2)
+        //agregar elemento al inico
+        array2.shift()
+        console.log(`array2:`,array2)
+        //ordenar el array
+        array2.sort()
+        console.log(`array2:`,array2)
+        //funciones
+        function sumar(){
+            console.log(`suma:`,10+20)
+        }
+        sumar()
+
+        //funcion con parametros
+        function sumarParam(num1,num2){
+            console.log(`la suma es:`,num1+num2)
+        }
+        sumarParam(5,7)
+
+        //funcion que retorna un valor
+        function sumarRetorna(n1,n2){
+            return n1+n2
+        }
+        let resultado=sumarRetorna(20,40)
+        console.log(`el resultado es:`,resultado)
+        
+
+
+    </script>
+</body>
+
+</html>
