@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <button id="boton1">click</button>
     <script>
         //arrays
         const array1 = [`Elemento1`, `Elemento2`, `Elemento3`, `Elemento4`]
@@ -49,30 +50,79 @@
         console.log(`array2:`, array2)
         //agregar elemento al inico
         array2.shift()
-        console.log(`array2:`,array2)
+        console.log(`array2:`, array2)
         //ordenar el array
         array2.sort()
-        console.log(`array2:`,array2)
+        console.log(`array2:`, array2)
         //funciones
-        function sumar(){
-            console.log(`suma:`,10+20)
+        function sumar() {
+            console.log(`suma:`, 10 + 20)
         }
         sumar()
 
         //funcion con parametros
-        function sumarParam(num1,num2){
-            console.log(`la suma es:`,num1+num2)
+        function sumarParam(num1, num2) {
+            console.log(`la suma es:`, num1 + num2)
         }
-        sumarParam(5,7)
+        sumarParam(5, 7)
 
         //funcion que retorna un valor
-        function sumarRetorna(n1,n2){
-            return n1+n2
+        function sumarRetorna(n1, n2) {
+            return n1 + n2
         }
-        let resultado=sumarRetorna(20,40)
-        console.log(`el resultado es:`,resultado)
-        
+        let resultado = sumarRetorna(20, 40)
+        console.log(`el resultado es:`, resultado)
 
+        //funciones anonimas
+        const suma = function (a, b) {
+            return a + b
+        }
+        console.log(suma(10, 20))
+
+        //funcion anonima en un callback
+        const arrayNumeros = [1, 2, 3, 4, 5]
+        const doble = arrayNumeros.map(function (numero) { return numero * 2 })
+        console.log(`arraynumero:`, arrayNumeros)
+        console.log(`doble`, doble)
+        //funcion fecha
+        const producto = (a, b) => a * b
+        const res = producto(2, 5)
+        console.log(`Producto:`, res)
+
+        const cuadrado = n => n * n
+        console.log(`cuadrado:`, cuadrado(10))
+
+        const triple = n => {
+            console.log(`triple:`, (3 * n))
+        }
+        triple(3);
+
+        //funcion anonima autoinvocada
+        (function(){
+            console.log(`funcion autoinvocada...`)
+        })()
+
+        //uso en eventos de funciones anonimas
+        document.getElementById(`boton1`).addEventListener(`click`, function(){
+            console.log(`Hiciste click`)
+        })
+        //funciones recursivas
+        // 5! = 5x4x3x2x1=120
+        function factorial(n){
+            if (n<=1) {
+                return 1
+            } else {
+                return n*factorial (n-1) //llamada recursiva
+            }
+        }
+        console.log(`Factorial: ${factorial(5)}`)
+
+        //funciones matematicas
+        console.log(`Maximo:`,Math.max(10,20,40,5,50,2,7))
+        //area de un circulo
+        let radio=3
+        let area=Math.round(Math.PI * Math.pow(radio,2))
+        console.log(`area:`,area)
 
     </script>
 </body>
